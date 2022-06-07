@@ -16,17 +16,21 @@
 
 			<div class="header__wrap">
 
-				<a href="#" class="header__logo">
-					<span>
-						Boris Bronstein
-					</span>
-				</a>
-
-				<div class="header__descript">
-					<span>
-						Residential and commercial real <span class="db">estate investment in Europe</span>
-					</span>
+				<div class="header-leftside">
+					<a href="#" class="header__logo">
+						<span>
+							Boris Bronstein
+						</span>
+						<img src="images/dist/logo-m.png" alt="">
+					</a>
+	
+					<div class="header__descript">
+						<span>
+							Residential and commercial real <span class="db">estate investment in Europe</span>
+						</span>
+					</div>
 				</div>
+
 
 				<div class="header__social">
 					<p>
@@ -45,12 +49,12 @@
 					</div>
 				</div>
 
-				<a href="#" class="header__blog">
+				<!-- <a href="#" class="header__blog">
 					<img src="images/dist/blog.svg" alt="">
 					<span>
 						Blog
 					</span>
-				</a>
+				</a> -->
 
 				<a href="#" class="header__phone">
 					<img src="images/dist/wh.svg" alt="">
@@ -83,8 +87,8 @@
 						<div class="index__descript">
 							<p>
 								Learn everything you need to know
-								about deals with property in Europe
-								in a <span>1-hour consultation </span>
+								<span class="db">about deals with property in Europe</span>
+								<span class="db">in a <span class="color-blue">1-hour consultation </span></span>
 								with a professional adviser
 							</p>
 						</div>
@@ -402,7 +406,7 @@
 							<div class="form-group">
 								<label class="control control--checkbox">
 									I agree to <a href="#">Privacy Policy</a>
-									<input data-type="checkbox" type="checkbox"
+									<input data-type="checkbox" checked="checkbox" type="checkbox"
 										name="form_checkbox_SIMPLE_QUESTION_712[]" value="13" class="check">
 									<span class="control__indicator"></span>
 								</label>
@@ -546,8 +550,8 @@
 							</h3>
 							<div class="book-pr__subtitle">
 								<p>
-									I know in detail and have personally inspected all the key new real estate objects
-									in Germany.
+									I know in detail and have personally inspected all the key new real estate <span class="db">objects
+										in Germany.</span>
 								</p>
 							</div>
 						</div>
@@ -566,7 +570,7 @@
 							<div class="book-pr__subtitle">
 								<p>
 									Licensed for international real estate activity and certified at Trade Register of
-									Germany.
+									<span class="db">Germany.</span>
 								</p>
 							</div>
 						</div>
@@ -1776,7 +1780,7 @@
 						<div class="form-group">
 							<label class="control control--checkbox">
 								I agree to <a href="#">Privacy Policy</a>
-								<input data-type="checkbox" type="checkbox" name="form_checkbox_SIMPLE_QUESTION_712[]" value="13" class="check">
+								<input data-type="checkbox" checked="checkbox" type="checkbox" name="form_checkbox_SIMPLE_QUESTION_712[]" value="13" class="check">
 								<span class="control__indicator"></span>
 							</label>
 						</div>
@@ -2029,14 +2033,38 @@
 
 	<script>
 		const swiper = new Swiper('.swiper', {
-			slidesPerView:1.5,
+			slidesPerView: 1.5,
 			loop: true,
 			spaceBetween: 149,
 			centeredSlides: true, 
 			navigation: {
-			nextEl: '.swiper-button-next',
-			prevEl: '.swiper-button-prev',
+				nextEl: '.swiper-button-next',
+				prevEl: '.swiper-button-prev',
 			},
+			breakpoints: {
+
+				320: {
+					slidesPerView: 1,
+					spaceBetween: 40,
+					alculateHeight:true,
+				},
+
+				990: {
+					slidesPerView: 1,
+					spaceBetween: 40,
+				},
+
+				1275: {
+					slidesPerView: 1,
+					spaceBetween: 40
+				},
+
+				1325: {
+					slidesPerView: 1.5,
+					spaceBetween: 149,
+
+				}
+			}
 		});
 		$('.earn__image-height').matchHeight({});
 
@@ -2045,17 +2073,36 @@
 		});
 		$('.scrollto').on('click', function() {
 
-let href = $(this).attr('href');
+		let href = $(this).attr('href');
 
-$('html, body').animate({
-	scrollTop: $(href).offset().top
-}, {
-	duration: 370,
-	easing: "linear" 
-});
+		$('html, body').animate({
+			scrollTop: $(href).offset().top
+		}, {
+			duration: 370,
+			easing: "linear" 
+		});
 
-return false;
-});
+		return false;
+		});
+
+
+		if($(window).width() < 777) {
+			$('.earn-form-mask img').attr('src', 'images/dist/top2.svg')
+		}
+
+		if($(window).width() < 875) {
+			$('.book-table-mask img').attr('src', 'images/dist/top350px.svg')
+		}
+
+		if($(window).width() < 590) {
+			$('.book-plan__mask img').attr('src', 'images/dist/top350px.svg')
+		}
+
+		if($(window).width() < 545) {
+			$('.invest__mask img').attr('src', 'images/dist/top350px.svg')
+		}
+		
+		
 	</script>
 </body>
 
